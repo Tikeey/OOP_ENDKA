@@ -12,6 +12,7 @@ public class Student extends User {
     private int credits;
     private double gpa;
     private List<Course> courses;
+    private Transcript transcript;
 
     public Student(int id, String login, String password, String firstName, String lastName, String email, StudentYear year, String school) {
         super(id, login, password, firstName, lastName, email);
@@ -20,6 +21,7 @@ public class Student extends User {
         this.credits = 0;
         this.gpa = 0.0;
         this.courses = new ArrayList<>();
+        this.transcript = new Transcript(this);
     }
 
     public StudentYear getYear() { 
@@ -36,6 +38,9 @@ public class Student extends User {
     }
     public List<Course> getCourses() { 
         return courses; 
+    }
+    public Transcript getTranscript() { 
+        return transcript; 
     }
 
     public void setGpa(double gpa) { 
